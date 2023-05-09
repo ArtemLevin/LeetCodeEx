@@ -27,14 +27,17 @@ while i < maxDot:
     print("")
     i = i + 1
 
-newWaterArray = sorted(waterArray, reverse=True)
-print(newWaterArray)
-i = 0
-waterVolumeArray = []
-while i < len(newWaterArray):
-    waterVolumeArray.append(i*(newWaterArray[i]))
-    print(waterVolumeArray)
-    i += 1
-print(waterVolumeArray)
-maxVolume = max(waterVolumeArray)
+enumWaterArrayList = list(enumerate(waterArray))
+sortedEnumerateWaterArrayList = sorted(enumWaterArrayList, key=lambda x: x[1], reverse=True)
+print(sortedEnumerateWaterArrayList)
+maxVolume = 0
+while len(sortedEnumerateWaterArrayList) > 0:
+    i = 0
+    while i < len(sortedEnumerateWaterArrayList):
+        waterVolume = sortedEnumerateWaterArrayList[i][1]*abs(sortedEnumerateWaterArrayList[0][0]-sortedEnumerateWaterArrayList[i][0])
+        if waterVolume > maxVolume:
+            maxVolume = waterVolume
+            print(maxVolume, waterVolume)
+        i += 1
+    sortedEnumerateWaterArrayList.pop(0)
 print(maxVolume)
