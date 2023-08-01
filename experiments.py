@@ -1,13 +1,5 @@
-# Given an integer x, return true if x is a
-# palindrome and false otherwise.
+n = [1,2,3,4,5,6,7,8,9,10,11]
 
-number = int(input('Number: '))
-# print (str(number))
-# print(str(number)[::-1])
-#
-# if str(number) == str(number)[::-1]:
-#     print('Number is  a palindrome')
-# else:
-#     print('Number is not a palindrome')
+a, *_, b, c = n
 
-print('Number is  a palindrome') if str(number) == str(number)[::-1] else print('Number is not a palindrome')
+print(f'{a=}, {b=}, {c=}')
