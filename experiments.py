@@ -1,5 +1,7 @@
-n = [1,2,3,4,5,6,7,8,9,10,11]
+def genFunc(myList):
+    for a in myList:
+        if a % 2 == 0:
+            yield a + 1
 
-a, *_, b, c = n
 
-print(f'{a=}, {b=}, {c=}')
+print(list(genFunc([0, 1, 2, 3, 4, 5])))
